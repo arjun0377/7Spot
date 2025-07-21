@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Song Card Player</title>
+</head>
+<style>
+  
+  h1{
+    display: flex;
+    justify-content: center;
+  }
+  .box{
+    /* display: flex; */
+    /* justify-content: center; */
+    border: 1px solid black;
+    height: 50vh;
+    width: 25vw;
+    margin: auto;
+    border-radius: 10px;
+    /* background-color: rgb(37, 35, 35); */
+
+     gap: 10px;
+     
+    }
+
+#todo   {
+  height: 20px;
+  border-radius: 6px;
+}
+#add{
+  height: 25px;
+  border-radius: 6px; 
+}
+#theme{
+  margin-left:  110px;
+  border-radius: 6px;
+  background: none;
+
+}
+.box.dark{
+  background-color: rgb(37, 35, 35);
+  color: white;
+}
+
+</style>
+<body>
+  <!-- <button id="mode">theme</button>
+  <div class="mode"></div>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, animi inventore officiis corrupti similique, ea ipsam quae vero fugiat rem consequuntur. Amet maiores perspiciatis modi mollitia sed quos, id molestias tempora quasi delectus, eos, itaque nulla pariatur aspernatur repellat magnam accusamus atque consequatur eius. Voluptatem voluptatibus, et iste accusamus voluptas repellat vel! Assumenda ea exercitationem inventore commodi vel tempora fugiat sed, autem illum nesciunt iure ex minus!</p>
+  <script>
+    
+    let isdark = false;
+    document.querySelector("#mode").addEventListener("click", ()=>{
+      if(isdark){
+      document.body.style.backgroundColor = "white";
+      document.body.style.color = "black";
+      }else{
+      document.body.style.backgroundColor = "black";
+      document.body.style.color = "white";
+      
+      }
+  isdark = !isdark;
+  });
+  
+</script> --> -->
+
+<!-- <div class="box">
+  <div class="items">
+    <input type="text" id="input" placeholder="  Enter your Task ">
+    <button id="add">Add Task </button>
+    <button id="delete">Delete</button>
+  </div>
+  
+  <ul class="list">
+    
+  </ul>
+</div> -->
+
+<!-- <script> -->
+  <!-- const add = document.querySelector("#add");
+  const inputbtn = document.querySelector("#input");
+  const tasklist = document.querySelector(".list")
+  
+  add.addEventListener("click" , ()=>{
+    const task  = inputbtn.value.trim();
+   if(task === "") return;
+   
+   const li = document.createElement("li");
+   li.textContent = task;
+
+   
+   const dlbtn = document.createElement("button");
+   dlbtn.textContent = "❌";
+   dlbtn.style.marginLeft = "10px";
+   
+   dlbtn.addEventListener("click" , ()=> li.remove());
+   
+   li.appendChild(dlbtn);
+   tasklist.appendChild(li);
+
+   inputbtn.value = "";
+   }); -->
+   
+  <!-- </script> -->
+  
+  <!-- <div class="box">
+    <label for="password">Enter pasward </label>
+    <input type="password" id="input" placeholder="Enter your pasward">
+    
+    
+    <input type="checkbox" id="toogle-passward">
+    <label for="toogle-passward"> Show Passward</label>
+  </div>
+  
+  <script>
+    const pass = document.querySelector("#input");
+    const toogle = document.querySelector("#toogle-passward");
+    
+    toogle.addEventListener("change" ,()=>{
+      
+    if(toogle.checked){
+      pass.type = "Text";
+      }else{
+        pass.type = "passward";
+        }
+        
+        });
+      </script> -->
+      
+      <!-- <form id="login-form" action="">
+        <label for="Email">Eneter your email</label>
+        <input type="email" id="email" placeholder="Enter your Email" />
+        <div id="email-error"  class="eerror"></div>
+
+        <label for="passward">Enter yoru Passward</label>
+        <input type="passward" id="passward" placeholder="ENter your passward" />
+        <div id="passward-error"  class="error"></div>
+        
+        <button type="submit" id="login">Login</button>
+        
+      </form>
+      
+      
+      <script>
+        const form = document.querySelector("#login-form");
+        const em = document.querySelector("#email");
+        const  pass = document.querySelector("#passward"); 
+        
+        const emeror = document.querySelector("#email-error");
+        const passeror = document.querySelector("#passward-error");
+        
+        form.addEventListener("submit" , function  (event) {
+          
+        event.preventDefault();
+        
+        emeror.textContent = "";
+        passeror.textContent = "";
+        emeror.classList.remove("invalid")
+        passeror.classList.remove("invalid")
+        
+        let haserror = false; 
+        
+        const emval = em.value.trim();
+        const char = pass.value.trim();
+        
+ if (!emval.includes("@") || !emval.includes(".")) {
+  emeror.textContent =   "❌ Email must contain '@' and '.' ";
+     emeror.classList.add("invalid");
+     haserror = true;
+     
+     }
+     
+     if(char.length < 6){
+      passeror.textContent =   "❌  passward  must be 6 char long  ";
+    passeror.classList.add("invalid");
+     haserror = true;
+     }
+     
+     if(!haserror){
+      alert('login succenful')
+      form.reset();
+}
+
+})
+</script> -->
+
+<!-- <input type="text" id="name" placeholder="Enter your name">
+<button id="save">Save</button>
+
+
+<script>
+  const sname = document.querySelector("#name");
+  const sv= document.querySelector("#save");
+  
+  sv.addEventListener("click" , ()=>{
+    let nae = sname.value.trim();
+    
+    if(nae !== "" ){
+      localStorage.setItem("name",nae );    
+      alert("name saved to local storage ")
+    }else{
+      alert('enmter your name ')
+      }
+  })
+
+  const svname = localStorage.getItem("name");
+  if(svname){
+    alert(`Welcome back , ${svname} !`)
+    }
+    
+  </script> -->
+  
+  <h1>To DO List </h1>
+  <div class="box">
+    <input type="text" id="todo" placeholder="Enter your task" >
+    <select name="priority" id="priority"></select>
+    <button id="add">Add</button> 
+    <input type="text" id="search" placeholder="Search">
+    <button id="theme">🌙 </button>
+    <ul id="list">sdasfdasf</ul>
+  </div>
+  <script src="script3.js"></script>
+</body>
+</html>
