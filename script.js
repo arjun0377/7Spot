@@ -29,69 +29,11 @@ async function getsongs(folder) {
 
 
 
- function  daynamicalb(){
-   DZ.api('/chart', function(response){
-     const albums = response.albums.data;
-    console.log("form the dezzer " + albums)
-    
-    const container = document.querySelector(".trending");
-    
-  
-    if (!container) {
-      console.error("❌ .trending container not found in HTML!");
-      return;
-    }
-     console.log("📡 daynamicalb running");
-       console.log("🧠 Albums:", albums);
-       
-    albums.forEach(album=>{
-      const card = document.createElement("div")
-      
-      card.className = "card";
 
-      card.innerHTML = `
-        <div class="img">
-          <img src="${album.cover_medium}" alt="${album.title}">
-          <div class="play">
-            <button>
-              <img width="7px" src="play.svg" alt="">
-            </button>
-          </div>
-        </div>
-        <div class="songname">${album.title}</div>
-        <div class="artistname">${album.artist.name}</div>
-      `;
-      container.appendChild(card);
-      
-    })
-     
-   })
-    
- }
 
 
 async function main() {
-  DZ.init({
-    appId: "8",
-    channelUrl: "http://127.0.0.1:3000", // If needed, use a valid domain here
-    player: {
-      container: "dz-root",
-      width: 0,
-      height: 0,
-      onload: function () {
-        console.log("✅ Deezer player loaded");
-   
-
-        daynamicalb(); // Now safe to call
-      }
-    }
-  });
- 
   
-
-
-
-
   let folder = "A7";
   // currfodler = folder;
    songs = await getsongs("A7");

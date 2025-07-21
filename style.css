@@ -1003,15 +1003,6 @@ background-color: #1F1F1F;
   }
 }
 
-volumeslider.addEventListener("input", () => {
-  const volume = volumeslider.value / 100;
-  audio.volume = volume;
-  updateimg(volume);
-
-  // Update slider background
-  volumeslider.style.background = `linear-gradient(to right, white ${volumeslider.value}%, #757171 ${volumeslider.value}%)`;
-});
-
 
 
 
