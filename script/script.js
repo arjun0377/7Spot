@@ -4,7 +4,7 @@ let currfodler;
 
 function updatesonginfo(filename){
    const songInfo = document.querySelector(".songinfo"); 
-    const fullUrl = `http://127.0.0.1:3000/${folder}/${filename}`;
+    const fullUrl = `./${folder}/${filename}`;
     const songItem = document.querySelector(`li[data-src="${fullUrl}"]`);
     if (songItem) {
         const title = songItem.querySelector(".songn").textContent;
@@ -15,7 +15,7 @@ function updatesonginfo(filename){
     }
 }
 async function getsongs(folder) {
-  let a = await fetch(`http://127.0.0.1:3000/${folder}/`);
+  let a = await fetch(`./${folder}/`);
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
@@ -42,7 +42,7 @@ async function getsongs(folder) {
       .replace(/\(.*?\)/g, "")
       .trim();
     let [artist = "unknow artist", title = cleanName] = cleanName.split(" - ");
-    songsul.innerHTML += `<li data-src="http://127.0.0.1:3000/${folder}/${song}">
+    songsul.innerHTML += `<li data-src="./${folder}/${song}">
       <img class="invert" src="img/music.svg" alt="cover">
       <div class="info">
         <div class="songn">${title}</div>
@@ -207,7 +207,7 @@ playprevious.addEventListener("click", () => {
     let index = songs.indexOf(current);
     if (index > 0) {
       let newSong  =  songs[index-1];
-        audioPlayer.src = `http://127.0.0.1:3000/${folder}/${newSong}`;
+        audioPlayer.src = `./${folder}/${newSong}`;
         audioPlayer.play();
         playicon.src = "img/pause.svg";
 
@@ -221,7 +221,7 @@ playforwerd.addEventListener("click", () => {
     let index = songs.indexOf(current);
     if (index > -1 && index < songs.length - 1) {
       const newSong =  songs[index + 1];
-        audioPlayer.src = `http://127.0.0.1:3000/${folder}/${newSong}`;
+        audioPlayer.src = `./${folder}/${newSong}`;
         audioPlayer.play();
         playicon.src = "img/pause.svg";
    
@@ -258,7 +258,7 @@ volumeslider.style.background = "linear-gradient(to right, white 0%, #f7f7f7ff 0
 
 Array.from(document.getElementsByClassName("card")).forEach(e => {
   e.addEventListener("click", async item => {
-    folder = `songs.mp3/${item.currentTarget.dataset.folder}`; // <-- update global folder
+    folder = `songs.mp3/${item.currentTarget.dataset.folder}`;
     songs = await getsongs(folder);
     currfodler = folder; // if you use currfodler elsewhere
   });
